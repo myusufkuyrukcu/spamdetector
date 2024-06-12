@@ -1,0 +1,6 @@
+# requirements.txt
+flask
+flask-restx
+pandas
+scikit-learn
+joblib
