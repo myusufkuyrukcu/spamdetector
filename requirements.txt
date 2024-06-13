@@ -4,3 +4,4 @@ flask-restx
 pandas
 scikit-learn
 joblib
+gunicorn
