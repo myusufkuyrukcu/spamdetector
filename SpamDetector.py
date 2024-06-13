@@ -48,9 +48,11 @@ class Train(Resource):
         
         # 1. CSV dosyasını oku
         try:
-            data = pd.read_csv(csv_path, usecols=['class', 'message'], encoding='utf-8')
-        except UnicodeDecodeError:
+                                                                                        
+                                  
             data = pd.read_csv(csv_path, usecols=['class', 'message'], encoding='latin1')
+        except UnicodeDecodeError as e:
+            return {'message': f'Error decoding file: {e}'}, 400
         
         # 2. Veriyi hazırla
         X = data['message']
